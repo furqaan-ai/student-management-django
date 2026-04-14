@@ -1,0 +1,15 @@
+{% extends "students/base.html" %}
+{% block content %}
+    works
+        <ul>
+            {% for s in school %}
+                <li>
+                    {{s.name}} {{s.location}}
+
+                    <a href="/home/school/{{s.id}}/">Show</a>
+
+                </li>
+                    {% endfor %}
+        </ul>
+
+{% endblock %}

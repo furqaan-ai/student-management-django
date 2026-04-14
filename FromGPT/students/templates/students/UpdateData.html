@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <input value="{{Data.name}}" name="name" type="text">
+            
+            <input value="{{Data.age}}" name="age" type="number">
+            
+            {% if Data.is_active %}
+                <input name="is_active" type="checkbox" checked>
+            {% else %}
+                <input name="is_active" type="checkbox">
+            {% endif %}
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </body>
+</html>

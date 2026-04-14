@@ -1,0 +1,59 @@
+{% extends "students/base.html" %}
+
+{% block content %}
+
+<h2>Student List</h2>
+
+<!-- SEARCH + FILTER -->
+<form method="GET">
+    <input type="text" name="q" placeholder="Search by name">
+    
+    <select name="status">
+        <option value="">All</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+    </select>
+
+    <button type="submit">Search</button>
+</form>
+
+<br>
+
+<a href="/home/AddData/">Add Student</a>
+
+<br><br>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>School</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for i in Data %}
+    <tr>
+        <td>{{ i.school }}</td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.age }}</td>
+        <td>
+            {% if i.is_active %}
+                Active
+            {% else %}
+                Inactive
+            {% endif %}
+        </td>
+        <td>
+            <form method="POST" action="/home/DeleteData/{{i.id}}/" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+
+            <a href="/home/UpdateData/{{i.id}}/">Edit</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
