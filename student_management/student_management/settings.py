@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'students',
-    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -51,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'FromGPT.urls'
+ROOT_URLCONF = 'student_management.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'FromGPT.wsgi.application'
+WSGI_APPLICATION = 'student_management.wsgi.application'
 
 
 # Database

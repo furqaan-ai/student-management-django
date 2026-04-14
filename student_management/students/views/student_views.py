@@ -84,3 +84,6 @@ def StudentsBySchool(request, id=1):
     else:
         schools = School.objects.all()
         return render(request, "students/ShowSchool.html", {"school": schools})
+    
+def ShowComplete(request):
+    return render(request, 'students/Success.html')
