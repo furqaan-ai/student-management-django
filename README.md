@@ -14,5 +14,3 @@ A Django web application to manage student records with CRUD operations, search,
 - Django
 - HTML
 
-## Author
-Syed Mohammed Furqaan Mubasshir
